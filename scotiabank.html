@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgba(133, 107, 127, 0.815)">
+    <title>Scotiabank Arena</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/venues.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(45, 34, 43, 0.775), rgba(90, 92, 104, 0.807)), url(images/scotiabank-background.jpg);
+        }
+        header {
+            background-color: #66245a;
+        }
+        h1 {
+            color: #fff;
+        }
+        h2 {
+            color: #f5f2f1;
+            background-color: #66245a;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            background-image: linear-gradient(rgb(37, 11, 31), rgb(70, 74, 92)), url(images/scotiabank-background.jpg);
+        }
+
+        .container .swiper-slide img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .container img{
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: 10px;
+        }
+
+        
+       
+        @media (max-width: 480px) {
+            .container img{
+                width: calc(100% - 20px);
+                height: 200px;
+            }
+            .container .swiper-slide img{
+                width: 350px;
+                height: 200px;
+            }
+           body{
+            padding: 0;
+           }
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <!-- Back button -->
+        <a href="index.html" class="back-arrow">&#8592;</a>
+        <!-- Heading -->
+        <h1>Scotiabank Arena</h1>
+
+    </header> 
+        
+    <div class="container">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="images/scotiabank1.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="images/scotiabank2.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="images/scotiabank3.jpeg" alt=""></div>
+            </div>
+            <!-- pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Accessible seating -->
+        <h2>Accessible Seating</h2>
+        <ul>
+            <li>Small balcony sections without fixed seats (100, 300, 600 levels)</li>
+            <li>Regular seats are stair access exclusively</li>
+            <li>Some guests recommend the lower level accessible seating if possible (100’s) as it is less restricted (600’s can be obstructed)</li>
+            <li>Do not buy standing ticket GA because visibility will be limited and you may be asked to move towards the back of the area</li>
+        </ul>
+
+        <!-- Image of the venue layout -->
+        <img src="images/scotiabank-map.webp" alt="" height="300px" width="400px">
+
+        <!-- Accessible restrooms -->
+        <h2>Restrooms</h2>
+        <ul>
+            <li>All washrooms wheelchair accessible</li>
+        </ul>
+
+        <!-- Information about ticket purchasing -->
+        <h2>Ticket Information</h2>
+        <ul>
+            <li>Up to 4 seats may be purchased to accommodate the accessible needs fan, a support person and/or guests</li>
+            <li>Call # for inquiries: (855) 682-6736 to book accessible seating (or Ticketmaster "W” class seats)</li>
+        </ul>
+
+        <!-- Information about accessible parking -->
+        <h2>Accessible Parking</h2>
+        <ul>
+            <li>4 onsite accessible parking spaces (416) 815-5982 (reserve up to 4 weeks in advance, reservations are required and early is good)</li>
+        </ul>
+
+        <!-- Information about accessible entrance -->
+        <h2>Accessible Entrance</h2>
+        <ul>
+            <li>Accessible entrance: gate 1 galleria, wheelchair escort if needed, notify the front desk after arrival</li>
+            <li>Best dropoff point is west side gate 5/6 area</li>
+        </ul>
+
+        <!-- Google Map iframe -->
+        <h2>Map</h2>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2258153227394!2d-79.38167382505448!3d43.64346995306192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb2b5935bf09%3A0x5842d0e7d5669410!2sScotiabank%20Arena!5e0!3m2!1sen!2sca!4v1709582248278!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.container .swiper', {
+            // Autoplay settings
+            autoplay: {
+                delay: 3000, // Delay between slides in milliseconds
+                disableOnInteraction: false // Autoplay continues even after user interaction
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // Allow pagination bullets to be clickable
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Next slide button class
+                prevEl: '.swiper-button-prev', // Previous slide button class
+            },
+        });
+    </script>
+
+</body>
+</html>
+

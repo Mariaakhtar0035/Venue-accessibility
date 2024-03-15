@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+    <meta name="theme-color" content="rgba(112, 41, 99, 0.776)">
+    <title>Concert Accessibility</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    
+   <h1>WheelBeats</h1>
+
+
+   <div class="container">  
+    <!-- Move the search form here -->
+    <form class="search-bar" onsubmit="searchVenue(); return false;">
+        <input type="text" placeholder="Search Venue" id="searchInput">
+        <button type="submit"><img src="images/search.png" alt="Search"></button>
+    </form>
+
+</div>
+
+<div class="icon" id="iconSection" style="display: none;">
+    <h2>Empowering Accessibility: Your Venue Access Companion </h2>
+    <img src="images/icon.png" alt="" height="400px">
+</div>
+
+
+   <!-- bottom_menu.html -->
+<div class="bottom-menu">
+    <a href="index.html">SEARCH</a>
+    <a href="landing-pages/events.html">EVENTS</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/js/sw.js").then(function(reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+   </script>
+
+</body>
+</html>
+

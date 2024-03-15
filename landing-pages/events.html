@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="rgba(0, 8, 51, 0.9)">
+    <title>Upcoming Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: linear-gradient(rgba(26, 17, 24, 0.772), rgba(0, 8, 51, 0.9)), url(/images/events-background.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 1000px;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            padding: 20px;
+        }
+        .events {
+            padding-bottom: 100px; /* Adjust the value as needed */
+        }
+
+        .events h1 {
+            font-size: 36px;
+            top: 10px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .events p{
+            color: #c6f0ff;
+        }
+        .events .description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .event-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .event-images a {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .event-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #010101;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .bottom-menu a {
+            display: inline-block;
+            padding: 20px 40px;
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: #432f47; /* Blue color, you can change it */
+            border-radius: 5px;
+        }
+
+        .bottom-menu a:hover {
+            background-color: #501f4d; /* Darker shade of blue on hover, you can change it */
+        }
+        
+        @media (max-width: 767px) {
+            .event-images a {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .events h1{
+                padding: 50px 20px;
+            }
+            .events .description {
+                font-size: 20px;
+            }
+            .event-images a {
+                width: calc(100% - 20px);
+            }
+        }
+
+        /* Media query for mobile screens */
+        @media (min-width: 319px) and (max-width: 480px){
+            .bottom-menu a {
+            padding: 10px 10px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="events">
+        <h1>Upcoming Events</h1>
+        <p class="description">Discover your next adventure: Explore the Latest Concerts, Sports, and Theater Events Near You</p>
+        <div class="event-images">
+            <a href="https://www.ticketmaster.ca/discover/concerts?geoHash=dpxp&radius=150&sort=date%2Casc&unit=km&daterange=all">
+                <img src="/images/concert-event.png" alt="Concert Image">
+            </a>
+            <a href="https://www.ticketmaster.ca/discover/sports">
+                <img src="/images/sport-event.png" alt="Sports Event Image">
+            </a>
+            <a href="https://www.ticketmaster.ca/discover/arts-theater">
+                <img src="/images/theater-event.png" alt="Theater Event Image">
+            </a>
+        </div>
+    </div>
+
+    <div class="bottom-menu">
+        <a href="/index.html">SEARCH</a>
+        <a href="events.html">EVENTS</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+
+    
+</body>
+</html>
