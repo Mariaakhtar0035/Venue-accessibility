@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Concerts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #concerts {
+            margin-top: 20px;
+        }
+        .concert {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .concert h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .concert p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upcoming Concerts in Ontario</h1>
+    <div id="concerts"></div>
+
+    <script>
+        function fetchConcerts() {
+            const apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json';
+            const apiKey = 'Nc7L7IHXd2dCEeKhtpvl4G3sYqVaXx15';
+
+            fetch(`${apiUrl}?apikey=${apiKey}&countryCode=CA&stateCode=ON&segmentName=Music&size=10`)
+                .then(response => response.json())
+                .then(data => {
+                    const concerts = data._embedded.events;
+                    const concertsContainer = document.getElementById('concerts');
+                    concertsContainer.innerHTML = '';
+
+                    concerts.forEach(concert => {
+                        const concertElement = document.createElement('div');
+                        concertElement.classList.add('concert');
+                        concertElement.innerHTML = `
+                            <h2>${concert.name}</h2>
+                            <p>Date: ${concert.dates.start.localDate}</p>
+                            <p>Time: ${concert.dates.start.localTime}</p>
+                            <p>Venue: ${concert._embedded.venues[0].name}</p>
+                        `;
+                        concertsContainer.appendChild(concertElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching concerts:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchConcerts();
+            
+            // Auto-refresh every 5 minutes
+            setInterval(fetchConcerts, 50 * 60 * 1000); // 50 minutes in milliseconds
+        });
+    </script>
+</body>
+</html>
